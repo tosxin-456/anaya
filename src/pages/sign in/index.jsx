@@ -4,9 +4,9 @@ import google from "../../assets/google.svg";
 import OTPModal from "../../components/email.component";
 import { useNavigate } from "react-router-dom";
 
-function SignUpPage() {
+function SignInPage() {
   const [modal, setModal] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <>
       {modal && <OTPModal />}
@@ -20,13 +20,13 @@ function SignUpPage() {
             />
             <h1 className="text-2xl font-bold">Welcome to Anaya</h1>
             <p className="text-sm text-gray-600">
-              Your personalized beauty journey starts here.
+              Skincare isn’t one-size-fits-all. Let’s keep it personal.
             </p>
           </div>
 
           <button className="w-full border border-gray-300 rounded-md flex items-center justify-center gap-2 py-2 hover:bg-gray-100 transition">
             <img src={google} alt="Google Icon" className="w-5 h-5" />
-            <span className="text-sm font-medium">Sign up with Google</span>
+            <span className="text-sm font-medium">Sign in with Google</span>
           </button>
 
           <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
@@ -41,18 +41,16 @@ function SignUpPage() {
           />
 
           <button
-            onClick={() => setModal(true)}
+            onClick={() => navigate("/welcome")}
             className="w-full bg-purple-600 text-white py-2 rounded-md text-sm font-medium hover:bg-purple-700 transition"
           >
-            Get Started
+            Login{" "}
           </button>
 
           <p className="text-center text-sm text-gray-600">
             Already have an account?{" "}
-            <span
-              className="text-purple-600 hover:underline cursor-pointer"
-            >
-              Login
+            <span className="text-purple-600 hover:underline cursor-pointer">
+              Sign Up{" "}
             </span>
           </p>
         </div>
@@ -61,4 +59,4 @@ function SignUpPage() {
   );
 }
 
-export default SignUpPage;
+export default SignInPage;
