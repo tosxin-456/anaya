@@ -49,7 +49,10 @@ function SignInPage() {
 
           <p className="text-center text-sm text-gray-600">
             Already have an account?{" "}
-            <span className="text-purple-600 hover:underline cursor-pointer">
+            <span
+              onClick={() => navigate("/signup")}
+              className="text-purple-600 hover:underline cursor-pointer"
+            >
               Sign Up{" "}
             </span>
           </p>
